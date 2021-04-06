@@ -19,8 +19,8 @@ class MimeType(BaseModel):
                 f'{self.type}/',
                 f'{self.subtype}',
                 f'+{self.suffix}' if self.suffix else '',
-                ';' if parameters and self.parameters else '',
-                ';'.join \
+                '; ' if parameters and self.parameters else '',
+                '; '.join \
                 (
                     f'{key}="{value}"'
                     for key, value in self.parameters.items()
