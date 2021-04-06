@@ -12,19 +12,18 @@ class MimeType(BaseModel):
     suffix:     typing.Optional[str]
     parameters: typing.Dict[str, str]
 
-    def __str__(self):
-        # This should really use a filter() instead of else ''
+    def __str__(self, parameters = True) -> str:
         return ''.join \
         (
             (
                 f'{self.type}/',
                 f'{self.subtype}',
                 f'+{self.suffix}' if self.suffix else '',
-                ';' if self.parameters else '',
+                ';' if parameters and self.parameters else '',
                 ';'.join \
                 (
                     f'{key}="{value}"'
                     for key, value in self.parameters.items()
-                ) if self.parameters else '',
+                ) if parameters and self.parameters else '',
             ),
         )
