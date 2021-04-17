@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Custom
+app.py
+app.*.py
+NOTES.txt
+_bin/
