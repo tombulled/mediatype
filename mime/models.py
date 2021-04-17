@@ -10,7 +10,7 @@ class MimeType(BaseModel):
     type:       str
     subtype:    str
     suffix:     typing.Optional[str]
-    parameters: typing.Dict[str, str]
+    parameters: typing.Optional[typing.Dict[str, str]]
 
     def __str__(self, parameters = True) -> str:
         return ''.join \
