@@ -7,18 +7,18 @@ from . import enums
 class BaseModel(pydantic.BaseModel): pass
 
 class MimeType(BaseModel):
-    type:       str
-    subtype:    str
-    suffix:     typing.Optional[str]
+    type:       enums.MediaType
+    subtype:    enums.MediaSubtype
+    suffix:     typing.Optional[enums.MediaSuffix]
     parameters: typing.Optional[typing.Dict[str, str]]
 
-    def __str__(self, parameters = True) -> str:
+    def __str__(self, suffix = True, parameters = True) -> str:
         return ''.join \
         (
             (
                 f'{self.type}/',
                 f'{self.subtype}',
-                f'+{self.suffix}' if self.suffix else '',
+                f'+{self.suffix}' if suffix and self.suffix else '',
                 '; ' if parameters and self.parameters else '',
                 '; '.join \
                 (
