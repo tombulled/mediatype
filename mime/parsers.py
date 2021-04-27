@@ -27,7 +27,7 @@ def parse(mime_type: str) -> models.MimeType:
     suffix:    typing.Optional[str] = None
     parameter: typing.Optional[str] = None
 
-    mime_type = mime_type.strip()
+    mime_type = mime_type.strip().lower()
 
     if ';' in mime_type:
         mime_type, parameter = map(str.strip, mime_type.split(';', 1))
