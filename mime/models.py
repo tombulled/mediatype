@@ -12,7 +12,10 @@ class MimeType(BaseModel):
     suffix:     typing.Optional[enums.MediaSuffix]
     parameters: typing.Optional[typing.Dict[str, str]]
 
-    def __str__(self, suffix = True, parameters = True) -> str:
+    def __str__(self) -> str:
+        return self.string()
+
+    def string(self, suffix = True, parameters = True) -> str:
         return ''.join \
         (
             (
