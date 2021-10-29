@@ -1,9 +1,6 @@
 import enumb
 
-class BaseEnum(enumb.AutoStrEnum):
-    _generate_next_value_ = lambda name, *_: name.lower().replace('_', '-')
-
-class MediaType(BaseEnum):
+class MediaType(enumb.Kebab):
     APPLICATION: str
     AUDIO:       str
     EXAMPLE:     str
@@ -15,7 +12,7 @@ class MediaType(BaseEnum):
     TEXT:        str
     VIDEO:       str
 
-class MediaSuffix(BaseEnum):
+class MediaSuffix(enumb.Kebab):
     BER:         str
     CBOR:        str
     CBOR_SEQ:    str
@@ -32,7 +29,7 @@ class MediaSuffix(BaseEnum):
     ZIP:         str
     ZSTD:        str
 
-class MediaSubtype(BaseEnum):
+class MediaSubtype(enumb.Kebab):
     _1D_INTERLEAVED_PARITYFEC                                           : str = '1d-interleaved-parityfec'
     _32KADPCM                                                           : str = '32kadpcm'
     _3GPDASH_QOE_REPORT                                                 : str = '3gpdash-qoe-report'
