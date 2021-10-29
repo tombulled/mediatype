@@ -1,12 +1,10 @@
-import pydantic
-
+import dataclasses
 import typing
 
 from . import enums
 
-class BaseModel(pydantic.BaseModel): pass
-
-class MimeType(BaseModel):
+@dataclasses.dataclass
+class MimeType:
     type:       enums.MediaType
     subtype:    enums.MediaSubtype
     suffix:     typing.Optional[enums.MediaSuffix]
