@@ -2,8 +2,8 @@ import typing
 
 from . import models
 
-def parse_parameter(parameter: str):
-    parameters: dict = {}
+def parse_parameter(parameter: str) -> typing.Dict[str, str]:
+    parameters: typing.Dict[str, str] = {}
     attribute:  str
     value:      str
 
