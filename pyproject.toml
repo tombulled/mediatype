@@ -1,12 +1,18 @@
 [tool.poetry]
-name = "mime"
-version = "0.1.4"
-description = "Mime Type parsing and creation"
+name = "mediatype"
+version = "0.1.5"
+description = "Media Type parsing and creation"
 authors = ["Tom Bulled <26026015+tombulled@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/tombulled/mediatype"
+repository = "https://github.com/tombulled/mediatype"
+documentation = "https://github.com/tombulled/mediatype"
+keywords = ["python", "mimetype", "mediatype", "contenttype", "mime"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-enumb = {git = "https://github.com/tombulled/enumb.git", rev = "main"}
+enumb = "^0.1.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

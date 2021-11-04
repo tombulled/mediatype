@@ -1,6 +1,15 @@
 import enumb
 
-class MediaType(enumb.Kebab):
+__all__ = ['MediaTypeType', 'MediaTypeSubtype', 'MediaTypeSuffix']
+
+class KebabEnum(enumb.Kebab):
+    def __repr__(self):
+        return repr(self.value)
+
+    def __str__(self):
+        return str(self.value)
+
+class MediaTypeType(KebabEnum):
     APPLICATION: str
     AUDIO:       str
     EXAMPLE:     str
@@ -12,7 +21,7 @@ class MediaType(enumb.Kebab):
     TEXT:        str
     VIDEO:       str
 
-class MediaSuffix(enumb.Kebab):
+class MediaTypeSuffix(KebabEnum):
     BER:         str
     CBOR:        str
     CBOR_SEQ:    str
@@ -29,7 +38,7 @@ class MediaSuffix(enumb.Kebab):
     ZIP:         str
     ZSTD:        str
 
-class MediaSubtype(enumb.Kebab):
+class MediaTypeSubtype(KebabEnum):
     _1D_INTERLEAVED_PARITYFEC                                           : str = '1d-interleaved-parityfec'
     _32KADPCM                                                           : str = '32kadpcm'
     _3GPDASH_QOE_REPORT                                                 : str = '3gpdash-qoe-report'
