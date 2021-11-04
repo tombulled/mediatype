@@ -1,58 +1,46 @@
 [[package]]
-name = "case"
-version = "0.1.2"
+name = "cassidy"
+version = "0.1.4"
 description = "String case conversion, identification and parsing"
 category = "main"
 optional = false
-python-versions = "^3.8"
-develop = false
-
-[package.source]
-type = "git"
-url = "https://github.com/tombulled/case.git"
-reference = "main"
-resolved_reference = "ce667e49c5ca22df0155eeaff0fc87db22da605d"
+python-versions = ">=3.8,<4.0"
 
 [[package]]
 name = "enumb"
-version = "0.1.2"
+version = "0.1.4"
 description = "Concise, Pythonic Enums"
 category = "main"
 optional = false
-python-versions = "^3.8"
-develop = false
+python-versions = ">=3.8,<4.0"
 
 [package.dependencies]
-case = "rev main"
-export = "rev main"
-
-[package.source]
-type = "git"
-url = "https://github.com/tombulled/enumb.git"
-reference = "main"
-resolved_reference = "750c756a4f49afc6421568231ddc03d039d3db07"
+cassidy = ">=0.1.2,<0.2.0"
+expo = ">=0.1.1,<0.2.0"
 
 [[package]]
-name = "export"
-version = "0.1.1"
+name = "expo"
+version = "0.1.2"
 description = "Selectively expose module functionality"
 category = "main"
 optional = false
-python-versions = "^3.8"
-develop = false
-
-[package.source]
-type = "git"
-url = "https://github.com/tombulled/export.git"
-reference = "main"
-resolved_reference = "fd9a082a4231b39da69b11afa04d33dc548fa498"
+python-versions = ">=3.8,<4.0"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "7502420f909254aef83e884de707bac8e21f8a0fd04643ddd375c562f83acd0f"
+content-hash = "2035521a38035986ff90c33528c6af34575fdd725c9a2f1cd282707a1b31dfda"
 
 [metadata.files]
-case = []
-enumb = []
-export = []
+cassidy = [
+    {file = "cassidy-0.1.4-py3-none-any.whl", hash = "sha256:9e6fdfff81accd7766f9b3e6665a1c0a914fd7b23c6da16d9face886bc1fb7d8"},
+    {file = "cassidy-0.1.4.tar.gz", hash = "sha256:d51a0f4210a614f6b092e25fe29c981de0d9b769c42129b43708e8f847e22bee"},
+]
+enumb = [
+    {file = "enumb-0.1.4-py3-none-any.whl", hash = "sha256:f395214111801a0fdae1d1cf0fc6914bfd0b5b8044da82f48b974fdeffc016f6"},
+    {file = "enumb-0.1.4.tar.gz", hash = "sha256:e5713af4ccbc2ec2ff3021d105fdfb7bb533aabbbd1ee883d7c25916dc233570"},
+]
+expo = [
+    {file = "expo-0.1.2-py3-none-any.whl", hash = "sha256:a36d64c6954de353ee67491351362b04c1b3281acb69afa8534b41279ecd2306"},
+    {file = "expo-0.1.2.tar.gz", hash = "sha256:df9042d9d73307bf987e89791b6e36744c5fa99f7464210e956e76d7fe3e84bd"},
+]

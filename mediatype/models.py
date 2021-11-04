@@ -4,10 +4,10 @@ import typing
 from . import enums
 
 @dataclasses.dataclass
-class MimeType:
-    type:       enums.MediaType
-    subtype:    enums.MediaSubtype
-    suffix:     typing.Optional[enums.MediaSuffix]
+class MediaType:
+    type:       str
+    subtype:    str
+    suffix:     typing.Optional[str]
     parameters: typing.Optional[typing.Dict[str, str]]
 
     def __str__(self) -> str:
