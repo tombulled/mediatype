@@ -5,10 +5,10 @@ Media Type parsing and creation
 ```python
 >>> import mediatype
 >>>
->>> mime = mediatype.parse('application/json+json-seq')
+>>> mime = mediatype('application/manifest+json')
 >>>
 >>> mime
-MimeType(type='application', subtype='json', suffix='json-seq', parameters=None)
+MediaType(type='application', subtype='manifest', suffix='json', parameters=None)
 >>>
 ```
 
