@@ -5,11 +5,8 @@ Media Type parsing and creation
 ```python
 >>> import mediatype
 >>>
->>> mime = mediatype('application/manifest+json')
->>>
->>> mime
+>>> mediatype('application/manifest+json')
 MediaType(type='application', subtype='manifest', suffix='json', parameters=None)
->>>
 ```
 
 ## References
