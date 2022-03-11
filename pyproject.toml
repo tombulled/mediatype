@@ -14,6 +14,10 @@ keywords = ["python", "mimetype", "mediatype", "contenttype", "mime"]
 python = "^3.8"
 enumb = "^0.1.4"
 
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+pytest = "^7.0.1"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
