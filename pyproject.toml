@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mediatype"
-version = "0.1.5"
+version = "0.1.6"
 description = "Media Type parsing and creation"
 authors = ["Tom Bulled <26026015+tombulled@users.noreply.github.com>"]
 license = "MIT"

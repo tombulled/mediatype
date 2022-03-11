@@ -8,10 +8,11 @@ import json
 import typing
 from pprint import pprint as pp
 
-def fetch():
-    resp = requests.get('https://www.iana.org/assignments/media-types/media-types.xml')
 
-    data = addict.Dict(xmltodict.parse(resp.text, xml_attribs = False))
+def fetch():
+    resp = requests.get("https://www.iana.org/assignments/media-types/media-types.xml")
+
+    data = addict.Dict(xmltodict.parse(resp.text, xml_attribs=False))
 
     parsed = {}
 
@@ -24,12 +25,14 @@ def fetch():
             if not record.file:
                 continue
 
-            media_subtype = parse.parse(f'{media_type}/{{name}}', record.file.lower()).named['name']
+            media_subtype = parse.parse(
+                f"{media_type}/{{name}}", record.file.lower()
+            ).named["name"]
             media_suffix = None
 
-            if (result := parse.parse('{prefix}+{suffix}', media_subtype)):
-                media_subtype = result.named['prefix']
-                media_suffix  = result.named['suffix']
+            if result := parse.parse("{prefix}+{suffix}", media_subtype):
+                media_subtype = result.named["prefix"]
+                media_suffix = result.named["suffix"]
 
             parsed[media_type].setdefault(media_subtype, set())
 
@@ -38,12 +41,13 @@ def fetch():
 
     return parsed
 
+
 d = fetch()
 
 # with open('data.json', 'w') as file:
 #     json.dump(d, file)
 
-media_types    = set()
+media_types = set()
 media_subtypes = set()
 media_suffixes = set()
 
@@ -56,7 +60,7 @@ for media_type in d:
         for media_suffix in d[media_type][media_subtype]:
             media_suffixes.add(media_suffix)
 
-'''
+"""
 MediaType = enum.Enum \
 (
     'MediaType',
@@ -95,4 +99,4 @@ json = MimeType \
     type    = MediaType.APPLICATION,
     subtype = MediaSubtype.JSON,
 )
-'''
+"""

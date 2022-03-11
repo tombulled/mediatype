@@ -1,12 +1,43 @@
 # mediatype
-Media Type parsing and creation
+Media Type (aka MIME Type) parsing and creation
+
+## Installation
+```console
+pip install mediatype
+```
 
 ## Usage
 ```python
 >>> import mediatype
+```
+
+### Parsing
+```python
+>>> media_type = mediatype.parse('application/manifest+json')
 >>>
->>> mediatype('application/manifest+json')
-MediaType(type='application', subtype='manifest', suffix='json', parameters=None)
+>>> media_type
+MediaType(
+    type='application',
+    subtype='manifest',
+    suffix='json',
+    parameters=None
+)
+>>>
+>>> str(media_type)
+'application/manifest+json'
+```
+
+### Creation
+```python
+>>> media_type = mediatype.MediaType(
+    type='application',
+    subtype='manifest',
+    suffix='json',
+    parameters=None
+)
+>>>
+>>> str(media_type)
+'application/manifest+json'
 ```
 
 ## References
